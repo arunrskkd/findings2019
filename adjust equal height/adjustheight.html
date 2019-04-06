@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.sectone div{
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  background: #df91df;
+}
+
+</style>
+<body>
+    <div class="sectone">
+      
+          <div class="heightsect">
+              asdsad
+            </div>
+
+      
+      
+        <div class="heightsect">
+            asdsad Lorem ipsum dolor sit, amet consectetur adipisicing elit. In iusto, iure autem ex doloremque ea est quas nam qui pariatur?
+          </div>
+          <div class="heightsect">
+              asdsad Lorem ipsum dolor sto, iure autem ex doloremque ea est quas nam qui pariatur?
+            </div>
+            <div class="heightsect">
+                asdsasdsadsa
+              </div>
+
+    </div>
+<br>
+    <div class="sectone">
+        <div class="heightsect2">
+          asdsad
+        </div>
+        <div class="heightsect2">
+            asdsad Lorem ipsum dolor sit, amet consectetur adipisicing elit. In iusto, iure autem ex doloremque ea est quas nam qui pariatur? asdsad Lorem ipsum dolor sit, amet consectetur adipisicing elit. In iusto, iure autem ex doloremque ea est quas nam qui pariatur? asdsad Lorem ipsum dolor sit, amet consectetur adipisicing elit. In iusto, iure autem ex doloremque ea est quas nam qui pariatur? asdsad Lorem ipsum dolor sit, amet consectetur adipisicing elit. In iusto, iure autem ex doloremque ea est quas nam qui pariatur? asdsad Lorem ipsum dolor sit, amet consectetur adipisicing elit. In iusto, iure autem ex doloremque ea est quas nam qui pariatur?
+            <div >
+                asdsasdsadsa
+              </div>
+          </div>
+          <div class="heightsect3">
+              asdsad Lorem ipsum dolor sto, iure autem ex doloremque ea est quas nam qui pariatur?
+            </div>
+            <div class="heightsect2">
+                asdsasdsadsa
+              </div>
+
+    </div>
+
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.slim.min.js"
+   ></script>
+    <script>
+      (function($){
+      $.fn.heightaddjust = function(options){
+
+        var defaults={
+            heightelement:'heightadjust'
+        },
+        options=$.extend(defaults,options);
+
+
+        $(this).each(function(){  
+          // Cache the highest
+          var highestBox = 0;
+          var childelement = $(this).find("."+options.heightelement);
+
+          if(childelement[0]){
+            // Select and loop the elements you want to equalise
+          $(childelement).each(function(){
+            
+            // If this box is higher than the cached highest then store it
+            if($(this).height() > highestBox) {
+              highestBox = $(this).height(); 
+            }
+          
+          });  
+                
+            // Set the height of all those children to whichever was highest
+            $(childelement).height(highestBox);
+          }
+          
+        });
+      };
+    })(jQuery);
+   
+</script>
+
+<script>
+
+    $(document).ready(function(){
+        $(".sectone").heightaddjust({heightelement:'heightsect'});
+        $(".sectone").heightaddjust({heightelement:'heightsect2'});
+      });
+
+</script>
+</body>
+</html>

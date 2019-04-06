@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .lazyload {
+            opacity: 0;
+            transition: .5s;
+        }
+
+        .animated {
+            opacity: 1;
+            transition: .5s;
+
+        }
+        .div{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .div div{
+            width: 100%;
+        }
+        .div img{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <div>
+            <img class="lazyload" src="images/placeholder1.png" data-src="images/imgthree.jpg">
+        </div>
+
+        <div>
+            <img class="lazyload" src="images/placeholder1.png" data-src="images/imgthree1.jpg">
+        </div>
+
+        <div>
+            <img class="lazyload" src="images/placeholder1.png" data-src="images/imgthree2.jpg">
+        </div>
+        <div>
+            <img class="lazyload" src="images/placeholder1.png" data-src="images/imgthree3.jpg">
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <script src="js/lazyload.js"></script>
+    <script>
+
+        lazyload();
+    </script>
+</body>
+
+</html>
