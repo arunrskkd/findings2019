@@ -1,0 +1,99 @@
+.sctbanner,.sectbannertwo{
+  display: flex;
+  &>div{
+   width: 30%;
+    margin: 10px;
+  }
+ 
+}
+.banner{
+	position: relative;
+	img{
+		width: 100%;
+	}
+	
+}
+.bannertext{
+	font-size: 40px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color:#000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+.secttwo{
+	font-size: 0;
+	ul{
+		width: 100%;
+		li{
+			width:calc(100%/3 - 20px);
+			margin:20px 10px;
+			display: inline-block;
+		}
+
+	}
+}
+#ajax-posts{
+	font-size: 0;
+		width: 100%;
+		h2{
+			font-size: 20px;
+		}
+		li{
+			width:calc(100%/3 - 20px);
+			margin:20px 10px;
+			display: inline-block;
+			font-size: 0;
+		}
+
+
+}
+.sectpreviews{
+	.owl-dots{
+		width: 100%;
+		bottom: 50px;
+	}
+	.item{
+		position: relative;
+		h4{
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			text-align: center;
+			font-size: 40px;
+			color: #fff;
+			font-weight: bold;
+		}
+	}
+	
+}
+
+.header{
+	padding: 20px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+	background: #fff;
+	text-align: center;
+	li{
+		list-style: none;
+		display: inline-block;
+		margin-right: 10px;
+	
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+	}
+
+}
