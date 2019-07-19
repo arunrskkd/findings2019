@@ -1,0 +1,16 @@
+
+<page layout="2columns-right" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Acodez_Faq/css/2right.css" />
+    </head>
+    <body>
+        <referenceContainer name="sidebar.additional">
+            <referenceBlock name="catalog.compare.sidebar" remove="true" />
+            <referenceBlock name="wishlist_sidebar" remove="true" />
+            <block class="Acodez\Faq\Block\Category\Index" name="faq-sidebar" template="Acodez_Faq::category.phtml" cacheable="false" before="-"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Acodez\Faq\Block\Faq\Index" name="faq-page" template="Acodez_Faq::faq.phtml" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

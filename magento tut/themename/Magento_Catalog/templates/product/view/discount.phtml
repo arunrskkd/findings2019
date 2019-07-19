@@ -1,0 +1,42 @@
+<?php $_product = $block->getProduct(); 
+$save_amount=0;
+// echo $_product->getPrice();
+// echo $_product->getspecialPrice();
+// echo $_product->getfinalPrice();
+?>
+<?php  if($_product->getSpecialPrice()>0){?>
+<div class="discount">
+	
+<span>
+<?php
+    //echo $_product->getTypeId();
+    if($_product->getTypeId()=="simple" || $_product->getTypeId()=="virtual"  || $_product->getTypeId()=="downloadable"){
+
+            $label_price=$_product->getPrice();
+        $final_price=$_product->getSpecialPrice();
+        $save_percent = 100 - round(($final_price / $label_price)*100);
+        $save_amount=round($label_price - $final_price);
+        echo $save_percent.'%';
+
+
+       
+    
+    }else{
+       //   echo $label_price=$_product->getSpecialPrice();
+       // echo $_product->getPrice();
+       //  echo  $final_price=$_product->getFinalPrice();
+       //  echo  $save_amount=round($final_price / $label_price);
+       //  echo $save_percent = 100 - round(($final_price / $label_price)*100);
+       //   echo $save_percent.'% Off';
+
+        
+    }
+    ?>
+   <div>Off</div> 
+    
+
+</span>
+<span class="saveamt">You Save INR <?php echo $save_amount?> </span>
+	
+</div>
+<?php } ?>

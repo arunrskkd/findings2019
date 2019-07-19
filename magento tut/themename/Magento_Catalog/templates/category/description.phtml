@@ -1,0 +1,37 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+<?php 
+
+    $_helper    = $this->helper('Magento\Catalog\Helper\Output');
+    $_category  = $block->getCurrentCategory();
+    $_imgHtml   = '';
+    $_imgUrl = $_category->getImageUrl();
+   $IconImage= $_category->getIconImage();
+
+  $blockObj= $block->getLayout()->createBlock('Acodez\Categoryattributes\Block\CategorisCollection');
+$iconUrl= $blockObj->getCategoryIconUrl($IconImage);
+
+if ($_description = $block->getCurrentCategory()->getDescription()): ?>
+    <div class="category-description" style="background:url('<?php echo $_imgUrl; ?>') no-repeat ;background-size:cover;">
+    	<div class="category-wrapper">
+    	<div class="cat-des">
+        <?= /* @escapeNotVerified */ $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_description, 'description') ?>
+    </div>
+    <div class="icon-image"><img src="<?php echo $iconUrl;?>" title="<?php echo $block->escapeHtml($_category->getName())?>" /></div>
+</div>
+    </div>
+<?php endif; ?>

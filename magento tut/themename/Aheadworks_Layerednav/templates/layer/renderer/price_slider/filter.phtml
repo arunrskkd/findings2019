@@ -1,0 +1,76 @@
+<?php
+/**
+ * Copyright 2018 aheadWorks. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+
+/* @var $block \Aheadworks\Layerednav\Block\Navigation\PriceSlider\FilterRenderer */
+
+// @codingStandardsIgnoreFile
+
+$isPriceSliderEnabled = $block->isPriceSliderEnabled();
+$isFromToInputsEnabled = $block->isFromToInputsEnabled();
+$isFilterLabelEnabled = $isPriceSliderEnabled && !$isFromToInputsEnabled;
+$isFilterButtonDisabled = $block->isFilterButtonDisabled();
+$currencySymbol = $block->getCurrencySymbol();
+$isDisplayCurrencySymbol = $block->isDisplayCurrencySymbol();
+$isCurrencySymAfterValue = $block->isCurrencySymAfterValue();
+?>
+<div class="aw-layered-nav-priceslider">
+ 
+    <div
+        id="slider-range"
+        class="full-width"
+        <?php /* @noEscape */ echo $isPriceSliderEnabled ? : 'style="display: none"'; ?>
+        data-mage-init='{
+        "awLayeredNavPriceSlider": {
+            "range": true,
+            "submitOnValueChange": <?php /* @noEscape */ echo $isFilterButtonDisabled ? 'true' : 'false' ?>,
+            "min": <?php echo $block->escapeHtml($minPrice) ?>,
+            "max": <?php echo $block->escapeHtml($maxPrice) ?>,
+            "priceFormat": <?php /* @noEscape */ echo \Zend_Json::encode($priceFormat) ?>,
+            "values": [
+             <?php echo $block->escapeHtml($fromPrice) ?>, <?php echo $block->escapeHtml($toPrice) ?> ]
+        }
+    }'></div>
+    <div class="price-inputs-wrapper" <?php /* @noEscape */ echo $isFromToInputsEnabled ? : 'style="display: none"'; ?>>
+        <div class="field price-from">
+            <label for="price_from" id="price_from_label" class="label">
+                <span><?php echo $block->escapeHtml(__('From')); ?></span>
+            </label>
+            <?php if ($isDisplayCurrencySymbol && !$isCurrencySymAfterValue): ?>
+                <span><?php /* @noEscape */ echo $currencySymbol ?></span>
+            <?php endif; ?>
+            <input type="text" id="price_from" data-role="aw-layered-nav-price-from">
+            <?php if ($isDisplayCurrencySymbol && $isCurrencySymAfterValue): ?>
+                <span><?php /* @noEscape */ echo $currencySymbol ?></span>
+            <?php endif; ?>
+        </div>
+        <div class="field price-to">
+            <label for="price_to" id="price_to_label" class="label">
+                <span><?php echo $block->escapeHtml(__('To')); ?></span>
+            </label>
+            <?php if ($isDisplayCurrencySymbol && !$isCurrencySymAfterValue): ?>
+                <span><?php /* @noEscape */ echo $currencySymbol ?></span>
+            <?php endif; ?>
+            <input type="text" id="price_to" data-role="aw-layered-nav-price-to">
+            <?php if ($isDisplayCurrencySymbol && $isCurrencySymAfterValue): ?>
+                <span><?php /* @noEscape */ echo $currencySymbol ?></span>
+            <?php endif; ?>
+        </div>
+    </div>
+    <div class="button-outer">
+    <button
+        data-role="aw-layered-nav-price-submit"
+        class="action price-filter-button"
+        <?php echo $isFilterButtonDisabled ? 'style="display: none"' : ''; ?>>
+        <?php echo $block->escapeHtml(__('Filter'))?>
+    </button>
+       <div class="price-filter-info" <?php /* @noEscape */ echo $isFilterLabelEnabled ? : 'style="display: none"'; ?>>
+        <?php echo $block->escapeHtml(__('From'))?>
+        <span data-role="aw-layered-nav-price-label-from"></span>
+        <?php echo $block->escapeHtml(__('to'))?>
+        <span data-role="aw-layered-nav-price-label-to"></span>
+    </div>
+</div>
+</div>

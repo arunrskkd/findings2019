@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   
+    <body>
+    <!--    <move element="header.links" destination="div.headerAdditional.block" before="minicart"/> -->
+         <referenceContainer name="header-wrapper">
+           <container name="div.header-main" htmlTag="div" htmlClass="header-main-div">
+          <container name="div.headerAdditional.block" htmlTag="div" htmlClass="header-additional-pop">
+           <!--  <block class="Magento\Cms\Block\Block" name="top.header.links" after="logo">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_menu</argument>
+                </arguments>
+            </block> -->
+        
+          
+                <!--  <block class="Magento\Framework\View\Element\Html\Link\Current" name="contact-us">
+                  <arguments>
+                        <argument name="label" xsi:type="string">Wishlist</argument>
+                        <argument name="path" xsi:type="string">wishlist</argument>
+                  </arguments>
+                  </block> -->
+            </container>
+
+           
+          
+        </container>
+         </referenceContainer>
+        <referenceContainer name="catalog.topnav">
+    <block class="Magento\Cms\Block\Block" name="top.header.links" after="logo">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_menu</argument>
+                </arguments>
+            </block>
+</referenceContainer>
+        <referenceBlock name="header.panel">
+           <block class="Magento\Cms\Block\Block" name="top.header.section" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_top_section</argument>
+                </arguments>
+            </block>
+     <!--   <container name="div.headerAdditional.block" htmlTag="div" htmlClass="header-additional-pop"> 
+        <block name="panel.top.links" class="Magento\Framework\View\Element\Html\Links" before="minicart">
+        <arguments>
+            <argument name="css_class" xsi:type="string">header links</argument>
+        </arguments>
+    </block>
+
+       </container> -->
+             
+        </referenceBlock>
+        <referenceBlock name="header.panel">
+           <block class="Magento\Cms\Block\Block" name="top.header.section.location" before="minicart">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_top_section_location</argument>
+                </arguments>
+            </block>
+
+        </referenceBlock>
+        <move element="wish-list-link" destination="header.links" after="-"/>
+        <move element="minicart" destination="header.panel" after="top.header.section.location"/>
+        <move element="logo" destination="header.panel" before="-"/>
+        <move element="top.search" destination="header.panel"  after="-"/>
+        <move element="catalog.compare.link" destination="header.links" after="-" />
+       <!--   <move element="minicart" destination="div.headerAdditional.block" after="header.panel"/>
+            <move element="top.search" destination="header-wrapper" before="logo"/>
+      
+        
+         <move element="header.panel" destination="div.headerAdditional.block" before="minicart"/>
+       <move element="currency" destination="div.headerAdditional.block" after="minicart"/> -->
+        
+      
+        <referenceContainer name="footer-container">
+            
+          <block class="Magento\Cms\Block\Block" name="homepage-footer-static1" before="-">
+          <arguments>
+              <argument name="block_id" xsi:type="string">footer_bottom_block</argument>
+          </arguments>
+        </block>
+     
+       <container name="bottom-footer-outer"    htmlTag="div"  htmlClass="footer-contents clearfix"  >
+           <container name="footer-outer"    htmlTag="div"  htmlClass="footer-outer clearfix" before ="-" >
+             <block class="Magento\Cms\Block\Block" name="footer.links.block" after="before">
+                      <arguments>
+                          <argument name="block_id" xsi:type="string">footer-links</argument>
+                      </arguments>
+              </block>
+               <container name="footer.newsletter"    htmlTag="div"  htmlClass="footer-newsletter clearfix" after ="footer.links.block" >
+              <block class="Magento\Cms\Block\Block" name="footer.links.partners.block" after="form.subscribe">
+                      <arguments>
+                          <argument name="block_id" xsi:type="string">footer-partners</argument>
+                      </arguments>
+              </block>
+            </container>
+            </container>
+             </container>
+
+        </referenceContainer>
+        <referenceBlock name="footer_links" remove="true"/> 
+        <referenceBlock name="register-link" remove="true"/> 
+
+
+
+       <!--  <referenceBlock name="copyright" remove="true"/> -->
+       <move element="form.subscribe" destination="footer.newsletter" before="-"/>
+
+      <!--  <referenceBlock name="navigation.sections">
+            <block class="Magento\Framework\View\Element\Template" name="store.information" group="navigation-sections" template="Magento_Theme::html/container.phtml">
+                <arguments>
+                    <argument name="title" translate="true" xsi:type="string">More</argument>
+                </arguments>
+                <block class="Magento\Cms\Block\Block" name="information_block">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">header_links_mobile</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceBlock> -->
+       
+    </body>
+</page>

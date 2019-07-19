@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Acodez. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+      
+<!--AddMenu-->
+
+	<add id="Acodez_Bannerslider::main_menu" title="Bannerslider" 
+            module="Acodez_Bannerslider" sortOrder="20" 
+            resource="Acodez_Bannerslider::bannerslider" />
+        <add id="Acodez_Bannerslider::add_slider" title="Manage Slides" 
+            module="Acodez_Bannerslider" sortOrder="1" parent="Acodez_Bannerslider::main_menu" 
+            action="bannerslider/slides/index" resource="Acodez_Bannerslider::acodez_bannerslider_index" />
+           
+    </menu>
+</config>

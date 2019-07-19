@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <faq>
+            <general>
+                <enable>1</enable>
+                <page_title>FAQ</page_title>
+                <meta_title></meta_title>
+                <meta_keywords></meta_keywords>
+                <meta_description></meta_description>
+                <layout>3</layout>
+                <page_type>2</page_type>
+            </general>
+        </faq>
+    </default>
+</config>

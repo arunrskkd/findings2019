@@ -1,0 +1,43 @@
+<?php
+ $id =$this->getFaqcat();
+$count=$this->getFaqcount();
+$fids=explode(",",$id);
+ $faqs=$block->getSelectedfaqs($fids,$count);
+if(count($faqs)>0){
+?>
+      <ul class="faq-block-list">
+      	<?php foreach ($faqs as $key => $data):
+      ?>
+            <li class="faq-item col-sm-4">
+                <h4 class="faq-item-question" ><?php echo $data->getQuestion();?></h4>
+                <div class="faq-item-answer" ><?php echo $data->getAnswer();?></div>
+            </li>
+            <?php endforeach; ?>
+
+    </ul>
+    <?php } ?>
+<script type="text/javascript">
+    require(['jquery'],function($){
+        $(window).load(function() {
+            $('.faq-block-list ').find('li').removeClass('acc_active');
+            $('.faq-block-list li').find('.faq-item-answer').hide();
+            jQuery('.faq-block-list li').click(function() {
+
+              if( $(this).hasClass('acc_active')){ 
+         
+                $(this).removeClass('acc_active');        
+                $(this).find('.faq-item-answer').hide();
+           
+              }else{
+                $('.faq-block-list ').find('li').removeClass('acc_active');
+                $('.faq-block-list li').find('.faq-item-answer').hide();
+                $(this).addClass('acc_active');         
+                $(this).find('.faq-item-answer').show();
+
+              }
+            });
+         });
+    });
+</script>
+
+

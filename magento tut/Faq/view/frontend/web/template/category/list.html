@@ -1,0 +1,4 @@
+
+<ul data-bind="foreach: items, afterRender: firstItemSelected">
+    <li class="faq-category-item" data-bind="text: name, click: $parent.categorySelected.bind($parent)"></li>
+</ul>

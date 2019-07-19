@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="acodez_extensions" translate="label" sortOrder="100">
+            <label>Acodez Extensions</label>
+        </tab>
+        <section id="faq" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>FAQ Configuration</label>
+            <tab>acodez_extensions</tab>
+            <resource>Acodez_Faq::setting</resource>
+            <group id="general" translate="label" sortOrder="1" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="page_title" translate="label" sortOrder="5" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Title</label>
+                </field>
+                <field id="meta_title" translate="label" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Title</label>
+                    <!--<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>-->
+                </field>
+                <field id="meta_keywords" translate="label" sortOrder="20" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Keywords</label>
+                    <!--<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>-->
+                </field>
+                <field id="meta_description" translate="label" sortOrder="30" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Description</label>
+                    <comment>
+                        Maximum 255 chars. Meta Description should optimally be between 150-160 characters
+                    </comment>
+                    <!--<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>-->
+                </field>
+                <field id="layout" translate="label" sortOrder="30" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Layout Style</label>
+                    <source_model>Acodez\Faq\Model\Source\Config\Layout</source_model>
+                </field>
+                <field id="page_type" translate="label" sortOrder="35" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Style</label>
+                    <source_model>Acodez\Faq\Model\Source\Config\PageType</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

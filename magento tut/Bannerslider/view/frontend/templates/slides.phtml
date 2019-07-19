@@ -1,0 +1,71 @@
+
+<?php
+ $catid =$this->getCategory();
+ $slides=$block->getCategorySlides($catid);
+$mediaUrl=$block->getMediaUrl();
+$sliderNames=array();
+if($block->isEnabled()){
+?>
+
+ <div  id="banners">
+  <div class="slick-slider2">
+    <?php foreach ($slides as $slide){ ?>
+    <?php if($slide){
+      $sliderNames[]=$slide->getName();
+
+       ?>
+    <div>
+<?php if($slide->getSlideUrl()){ ?>
+      <a href="<?php echo $slide->getSlideUrl();?>" >
+<?php } ?>
+<picture class="slider-pic">
+  <source media="(min-width: 640px)" srcset="<?php echo $mediaUrl.$slide->getDesktopImage();?>">
+  <img src="<?php echo $mediaUrl.$slide->getMobileImage();?>"  style="width:auto;" alt="<?php if($slide->getName()){ echo $slide->getName(); }else{ echo 'slide'; } ?>">
+</picture>
+<?php if($slide->getSlideUrl()){ ?>
+    </a>
+    <?php } ?>
+   <?php if($slide->getDescription()){ ?>
+    <div class="slide-content">
+      <?php echo $slide->getDescription()?>
+      <a href="<?php echo $slide->getSlideUrl();?>">more</a>
+    </div>
+     <?php } ?>
+  </div>
+    <?php } } ?>
+  </div>
+  <!-- Add Pagination -->
+<!-- <div class="swiper-pagination"></div> -->
+
+
+
+</div>
+
+
+ <script>
+
+
+    require(['jquery','slick'], function($) {
+
+var sliderName = <?php echo json_encode($sliderNames) ?>;
+           $('.slick-slider2').slick({
+              slidesToShow:1,
+              slidesToScroll: 1,
+              // vertical:true,
+              arrows: false,
+              // easing: 'swing',
+               loop:true,
+               autoplay: true,
+               pauseOnHover:false,
+               dots: true,
+               speed: 1000,
+               fade: true,
+              //  cssEase: 'linear',
+
+               customPaging: function(slick,index) {
+                  return '<span class="tool-tip">' +sliderName[index]+'</span><span class="dots"></span> ';
+              }
+            });
+        });
+</script>
+<?php } ?>

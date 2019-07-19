@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Acodez. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+      
+<!--AddMenu-->
+
+	<add id="Acodez_Bannerslider::main_menu" title="Banner Slider" 
+            module="Acodez_Bannerslider" sortOrder="20" 
+            resource="Acodez_Bannerslider::bannerslider" parent="Acodez_Common::acodez_common"/>
+        <add id="Acodez_Bannerslider::add_slider" title="Manage Slides" 
+            module="Acodez_Bannerslider" sortOrder="1" parent="Acodez_Bannerslider::main_menu" 
+            action="bannerslider/slides/index" resource="Acodez_Bannerslider::acodez_bannerslider_index" />
+       <add id="Acodez_Bannerslider::add_category" title="Manage Category" 
+            module="Acodez_Bannerslider" sortOrder="2" parent="Acodez_Bannerslider::main_menu" 
+            action="bannerslider/category/index" resource="Acodez_Bannerslider::acodez_bannerslider_category_index" />
+        <add title="Settings" resource="Acodez_Bannerslider::banner_settings" dependsOnModule="Acodez_Bannerslider" parent="Acodez_Bannerslider::main_menu" sortOrder="20" module="Acodez_Bannerslider" translate="title" id="Acodez_Bannerslider::banner_settings" action="adminhtml/system_config/edit/section/acodez_bannerslider"/>
+           
+    </menu>
+</config>

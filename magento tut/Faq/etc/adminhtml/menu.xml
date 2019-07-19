@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Acodez_Faq::faq" title="FAQ" translate="title" module="Acodez_Faq" sortOrder="30" resource="Acodez_Faq::faq" parent="Acodez_Common::acodez_common"/>
+
+        <add id="Acodez_Faq::faq_category" title="Manage FAQ Category" translate="title" module="Acodez_Faq" parent="Acodez_Faq::faq" sortOrder="1" resource="Acodez_Faq::faq_category" action="faq/category/index"/>
+        <add id="Acodez_Faq::faq_item" title="Manage FAQ" translate="title" module="Acodez_Faq" parent="Acodez_Faq::faq" sortOrder="1" resource="Acodez_Faq::faq_item" action="faq/faq/index"/>
+        <add id="Acodez_Faq::setting" title="Settings" module="Acodez_Faq" translate="title" parent="Acodez_Faq::faq" sortOrder="1" resource="Acodez_Faq::setting" action="adminhtml/system_config/edit/section/faq"/>
+    </menu>
+</config>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <!--  <head>
+       <css src="css/carowsel.css" />
+    </head> -->
+   
+    <body>
+          <referenceContainer name="product.info.main">
+               <container name="discount.container"  htmlTag="div"  htmlClass="discount-container" before="alert.urls" >
+                <block class="Magento\Catalog\Block\Product\View" name="product.discount" template="Magento_Catalog::product/view/discount.phtml" after="-"/>
+               </container>
+            
+            
+        </referenceContainer>
+        <referenceContainer name="product.info.stock.sku">
+            <container name="review.container"  htmlTag="div"  htmlClass="review-container" before="-" >                
+            </container>
+        </referenceContainer>
+        <referenceBlock name="product.info.details">
+		<block class="Magento\Catalog\Block\Product\View" name="faq.tab" template="Magento_Catalog::faq_tab.phtml" group="detailed_info" >
+			<arguments>
+				<argument translate="true" name="title" xsi:type="string">FAQS</argument>
+			</arguments>
+		</block>
+        
+		</referenceBlock>
+    <referenceBlock name="content">
+      <container name="details.outer" htmlClass="details-outer" htmlTag="div" after="product.info.media">  <block class="Magento\Catalog\Block\Product\View" name="product.extra.details" template="Magento_Catalog::product/view/extra-details.phtml" after="-"/></container>       
+      
+    </referenceBlock>
+
+        <move element="product.info.details" destination="details.outer" before="-"/>
+        <move element="product.info.stock.sku" destination="product.info.main" before="discount.container"/>
+        <move element="product.info.overview" destination="page.main.title" after="-"/>
+        <move element="product.info.price" destination="discount.container" before="-"/>
+        <move element="product.info.sku" destination="review.container" before="-"/>
+        <move element="product.info.review" destination="review.container" after="-"/>
+        <move element="breadcrumbs" destination="main.content" before="columns"/>
+        <!-- <move element="product.info.social" destination="product.info.addtocart" after="-"/>
+         <move element="product.info.social" destination="product.info.addtocart.additional" after="-"/> -->
+        
+        
+
+    </body>
+</page>

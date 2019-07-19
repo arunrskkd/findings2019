@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="empty"/>
+    <referenceContainer name="page.wrapper">
+        <container name="header.container" as="header_container" label="Page Header Container"  htmlTag="header" htmlClass="page-header" before="main.content"/>
+        <container name="page.top" as="page_top" label="After Page Header" after="header.container"/>
+        <container name="slider"  htmlTag="div"  htmlClass="home-slider" after ="main" >
+           <block class="Acodez\Bannerslider\Block\Slides" name="home_banner" template="Acodez_Bannerslider::home-topslides.phtml" >
+          <arguments>
+            <argument translate="true" name="title" xsi:type="string">Slider1</argument>
+            <argument name="category" xsi:type="string">2</argument>
+        </arguments>
+          </block>
+       
+        </container>
+ 	
+        <container name="section1"  htmlTag="div"  htmlClass="section1" after ="slider" >
+            
+        <block class="Magento\Cms\Block\Block" name="homepage-popular">
+          <arguments>
+              <argument name="block_id" xsi:type="string">home-popular</argument>
+          </arguments>
+        </block> 
+       
+        </container>
+      
+         <container name="section2"  htmlTag="div"  htmlClass="section2" after ="section1" >
+              <block class="Magento\Cms\Block\Block" name="homepage-featured">
+          <arguments>
+              <argument name="block_id" xsi:type="string">home-featured</argument>
+          </arguments>
+        </block>
+         <block class="Acodez\Bannerslider\Block\Slides" name="slider2" template="Acodez_Bannerslider::slides.phtml" >
+          <arguments>
+            <argument translate="true" name="title" xsi:type="string">Slider2</argument>
+            <argument name="category" xsi:type="string">1</argument>
+        </arguments>
+      </block>
+       
+           
+         </container>
+          <container name="section11"  htmlTag="div"  htmlClass="section1" after ="section2" >
+             <block class="Acodez\Bannerslider\Block\Slides" name="slider2" template="Acodez_Bannerslider::slides.phtml" >
+          <arguments>
+            <argument translate="true" name="title" xsi:type="string">Slider2</argument>
+            <argument name="category" xsi:type="string">1</argument>
+        </arguments>
+      </block>
+    </container>
+     <container name="section12"  htmlTag="div"  htmlClass="sec1-banner" after ="section11" >
+       <block class="Magento\Cms\Block\Block" name="homepage-special">
+          <arguments>
+              <argument name="block_id" xsi:type="string">homepage-special-offers</argument>
+          </arguments>
+        </block>
+      <block class="Magento\Cms\Block\Block" name="homepage-static2">
+          <arguments>
+              <argument name="block_id" xsi:type="string">home_about</argument>
+          </arguments>
+        </block>
+          </container>
+         <container name="section3"  htmlTag="div"  htmlClass="section3" after ="section12" >
+          
+            <block class="Magento\Cms\Block\Block" name="homepage-static-video">
+          <arguments>
+              <argument name="block_id" xsi:type="string">home_static_video</argument>
+          </arguments>
+        </block>
+         </container>
+         <container name="section4"  htmlTag="div"  htmlClass="section4" after ="section3" >
+            <block class="Magento\Cms\Block\Block" name="homepage-static1">
+          <arguments>
+              <argument name="block_id" xsi:type="string">home_bottom</argument>
+          </arguments>
+        </block>
+         </container>
+       <!--    <container name="new.products" as="new_products"   htmlTag="div"  htmlClass="new-products clearfix" after ="home.static1" >
+            <block class="Acodez\Newproducts\Block\Slides" template="Acodez_Newproducts::slider.phtml" />
+          </container> -->
+           
+        <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer" >
+          <container name="footer.newsletter"    htmlTag="div"  htmlClass="footer-newsletter clearfix" before="-" />
+        </container>
+    </referenceContainer>
+</layout>

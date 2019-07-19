@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<head>
+
+<css src="Acodez_Faq/css/general.css"/>
+
+</head>
+    <body>
+   <!--      <referenceBlock name="header.links">
+            <block class="Acodez\Faq\Block\Link" name="faq-header-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">FAQ</argument>
+                    <argument name="path" xsi:type="string" translate="true">faq/index/index</argument>
+                </arguments>
+            </block>
+        </referenceBlock> -->
+        <referenceBlock name="footer_links">
+            <block class="Acodez\Faq\Block\BackLink" name="faq-footer-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Extension be design by Acodez</argument>
+                    <argument name="path" xsi:type="string" translate="true">https://acodez.in/</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

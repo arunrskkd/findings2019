@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+     <update handle="editor"/>
+    <body>
+	   <referenceContainer name="content">
+            <block class="Acodez\Bannerslider\Block\Adminhtml\Slides\Edit" name="acodez_slides_edit"/>
+        </referenceContainer>
+		 <referenceContainer name="left">
+            <block class="Acodez\Bannerslider\Block\Adminhtml\Slides\Edit\Tabs" name="acodez_slides_edit_tabs">
+				<block class="Acodez\Bannerslider\Block\Adminhtml\Slides\Edit\Tab\Slides" name="acodez_slides_edit_tab_slides"/>
+				
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">slides_section</argument>
+                    <argument name="block" xsi:type="string">acodez_slides_edit_tab_slides</argument>
+                </action>
+			</block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,56 @@
+<?php $catid =$this->getCategory();
+ $sliders=$block->getCategorySlides($catid);
+$mediaUrl=$block->getMediaUrl();
+if($block->isEnabled()){
+if(count($sliders)>0){ 
+?>
+<div class="designer-slider">
+<div class="swiper-container" id="dslider">
+    <div class="swiper-wrapper">
+    	<?php foreach($sliders as $slide){
+      if($slide->getDesktopImage() || $slide->getMobileImage() ){ ?>
+      <div class="swiper-slide">
+      		<a href="<?php echo $slide->getSlideUrl();?>" >
+			<picture>
+        <?php  if($slide->getDesktopImage()) { ?>
+			  <source media="(min-width: 640px)" srcset="<?php echo $mediaUrl.$slide->getDesktopImage();?>">
+          <?php } ?>
+            <?php  if($slide->getMobileImage()) { ?>
+			  <img src="<?php echo $mediaUrl.$slide->getMobileImage();?>"  style="width:auto;" alt="<?php if($slide->getName()){ echo $slide->getName(); }else{ echo 'slide'; } ?>"><?php } ?>
+			</picture>
+		</a>
+      </div>
+     	<?php  } }  ?>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination1"></div>
+  </div>
+</div>
+<?php } ?>
+<script>
+    (function  () {
+        require(["jquery","swipeslider"],function($,Swiper) {
+            $(document).ready(function() {              
+               var swiper = new Swiper('#dslider', {
+                             centeredSlides: true,
+                            autoplay: {
+                            delay: 3000,
+                           //speed:1000,
+                            disableOnInteraction: false,
+                           },
+                            speed: 5000,
+                            effect: 'fade',
+                            setTransition:6000,
+                           loop: false,
+    
+                         pagination: {
+                  el: '.swiper-pagination1',
+                  clickable: true
+					      },
+                      });     
+            });
+        });
+    })();
+</script>
+
+<?php } ?>

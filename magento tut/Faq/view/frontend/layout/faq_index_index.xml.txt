@@ -1,0 +1,19 @@
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Acodez_Faq/css/general.css" />
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">FAQ</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Acodez\Faq\Block\Faq\Search" before="-" name="faq-search" template="Acodez_Faq::search.phtml" cacheable="false" />
+        </referenceContainer>
+        <referenceContainer name="footer">
+            <block class="Acodez\Faq\Block\Faq\Item" after="-" name="faq-item-alias" template="Acodez_Faq::item.phtml" cacheable="false" />
+        </referenceContainer>
+    </body>
+</page>
