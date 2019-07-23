@@ -1,0 +1,28 @@
+1.AOS animate on scroll
+2.slick slider
+3.owl corousal
+4.Swiper slider
+5.masonary.js 
+6.jsscrollpane
+7.nice select
+8.jquery validate
+9.amcharts js
+10.magnific popup
+11.counter up
+12.easy responsive tabs
+13.fancybox.
+14.lightslider
+15.waypoints(trigger on scroll)
+16.tilt.js
+17.scrollify js
+18.scroll magic
+19.https://github.com/yapro/wowbook wowbook .js book effect
+20.https://github.com/alumbo/jquery.parallax-scroll
+21.https://github.com/wagerfield/parallax
+22.https://gromo.github.io/jquery.scrollbar/demo/basic.html
+23.https://idiotwu.github.io/smooth-scrollbar/
+25.sumo select
+26.https://www.google.com/maps/d
+27.https://github.com/alvarotrigo/pagePiling.js/
+28.slick animation
+29.https://www.jqueryscript.net/loading/Performant-Image-Lazy-Loading-Plugin-with-jQuery-imglazy.html
