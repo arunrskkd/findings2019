@@ -26,3 +26,4 @@
 27.https://github.com/alvarotrigo/pagePiling.js/
 28.slick animation
 29.https://www.jqueryscript.net/loading/Performant-Image-Lazy-Loading-Plugin-with-jQuery-imglazy.html
+30.barbra js -  https://barba.js.org/v1/how-it-works.html
