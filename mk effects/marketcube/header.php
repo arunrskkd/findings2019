@@ -87,32 +87,35 @@
 			<div class="inside-skew">
 					<ul class="menulinks">
 						<li>
-							<a href=""><span class="count">1</span>The Cube</a>
+							<a href=""><span class="count">01</span>The Cube</a>
 						</li>
 						<li>
-							<a href=""><span class="count">2</span>The Sample</a>
+							<a href=""><span class="count">02</span>The Sample</a>
 						</li>
 						<li>
-							<a href=""><span class="count">3</span>Services</a>
+							<a href=""><span class="count">03</span>Services</a>
 						</li>
 						<li>
-							<a href=""><span class="count">4</span>Piplsay</a>
+							<a href=""><span class="count">04</span>Piplsay</a>
 						</li>
 						<li>
-							<a href=""><span class="count">5</span>About Us</a>
+							<a href=""><span class="count">05</span>About Us</a>
 						</li>
 						<li>
-							<a href=""><span class="count">6</span>Events/News</a>
+							<a href=""><span class="count">06</span>Events/News</a>
 						</li>
 						<li>
-							<a href=""><span class="count">7</span>Careers</a>
+							<a href=""><span class="count">07</span>Careers</a>
 						</li>
 					</ul>	
 
 			</div>		
 
 		</div>
+		<div class="navigation-bottom">
+			<h2>menu</h2>
 
+		</div>
 
 	</div>
 

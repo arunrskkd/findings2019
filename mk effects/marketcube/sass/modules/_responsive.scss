@@ -132,6 +132,7 @@
     }
     li{
         padding-bottom: 15px;
+        list-style: none;
     }
     a{
         @include font-size(20); 

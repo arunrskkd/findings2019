@@ -40,7 +40,7 @@ function san_scripts() {
 
             </div>
             <div class="sect-video">
-            <video src="<?php bloginfo('template_directory'); ?>/videos/v1.mp4" muted="" preload="auto" loop="" autoplay></video>
+            <video src="<?php bloginfo('template_directory'); ?>/videos/v1.mp4" muted="" preload="auto" loop="" autoplay poster="<?php bloginfo('template_directory'); ?>/images/v1.jpg"></video>
             </div>
             <div class="sect-foot">
                 <div class="foot-left">
@@ -80,6 +80,17 @@ function san_scripts() {
                     </a>
                 
                 </div>
+            </div>
+            <div class="sect-foot-mobile">
+                  <div class="number">
+                    01
+                  </div>
+                  <div class="page-link">
+                     <a href="http://localhost/projects/marketcube/about/">
+                        <h4>Intelligence</h4>
+                     </a>
+                  </div>
+
             </div>
         </section>
        

@@ -15,6 +15,11 @@
             transform: translateX(0) translateY(0) translateZ(0);
             transition: .5s;
         }
+        .navigation-bottom{
+           opacity: .4;
+           transition: .5s;
+
+        }
     }
     .navigation-left{
         position: absolute;
@@ -94,6 +99,26 @@
                 color:#ec911c;
                 margin-right: rem(30);
             }
+        }
+    }
+    .navigation-bottom{
+        position: absolute;
+        bottom: -11%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: .5s;
+        pointer-events: none;
+        h2{
+            @include font-size(287); 
+            color:#191919;
+            text-align: center;
+            font-weight: 700;
+
+       
+
         }
     }
 }

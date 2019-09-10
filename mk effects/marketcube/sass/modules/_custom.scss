@@ -112,11 +112,31 @@ body{
 
 }
 
+// animations
+@-webkit-keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(156, 97, 21, 0.13), 0 0 0 10px rgba(156, 97, 21, 0.13), 0 0 0 30px rgba(156, 97, 21, 0.13), 0 0 0 60px rgba(156, 97, 21, 0.13);
+    }
+
+    100% {
+        box-shadow: 0 0 0 10px rgba(156, 97, 21, 0.13), 0 0 0 30px rgba(156, 97, 21, 0.13), 0 0 0 60px rgba(156, 97, 21, 0.13), 0 0 0 90px rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(156, 97, 21, 0.13), 0 0 0 10px rgba(156, 97, 21, 0.13), 0 0 0 30px rgba(156, 97, 21, 0.13), 0 0 0 60px rgba(156, 97, 21, 0.13);
+    }
+
+    100% {
+        box-shadow: 0 0 0 10px rgba(156, 97, 21, 0.13), 0 0 0 30px rgba(156, 97, 21, 0.13), 0 0 0 60px rgba(156, 97, 21, 0.13), 0 0 0 90px rgba(255, 255, 255, 0);
+    }
+}
 
 .btnone{
   @include font-size(23); 
     color:#ffffff;
-    border:1px solid $primary-color;
+    border:2px solid $primary-color;
     border-radius: 5px;
     @include padding(15,20,15,20);  
     background: rgba(0, 0, 0, 0.58);
@@ -159,9 +179,32 @@ body{
         overflow: hidden;
         .abt-wavelink{
             position: absolute;
-            top: 50%;
+            top: 62%;
             z-index: 12;
-            right: 20%;
+            left: 20%;
+            &:before{
+                content: '';
+                position: absolute;
+                top: 27px;
+                left: 27px;            
+                text-decoration: none;
+                color: #fff;
+                width: 12px;
+                height: 12px;
+                background-color: rgba(140, 90, 20, 0.42);
+                margin: 0 auto;
+                border-radius: 100px;
+                animation: ripple 1s linear infinite;
+            }
+            &.link2{
+                top: 87px;
+                left: 30%;
+            }
+            &.link3{
+                top: 50%;
+                right: 16%;
+                left: auto;
+            }
         }
     }
     .sect-video{
@@ -173,6 +216,11 @@ body{
         z-index: 1;
         overflow: hidden;
         video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        img{
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -319,7 +367,52 @@ body{
 
 
 
+// split effect css
 
+.split {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-perspective: 400px;
+            perspective: 400px;
+    cursor: pointer;
+  }
+  .split:before {
+    content: 'CLICK';
+    color: #777;
+    letter-spacing: 1px;
+    font-size: 10px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+  .split img {
+    height: auto;
+    width: 100%;
+    opacity: 0;
+  }
+  .split div {
+    position: absolute;
+    z-index: 1;
+    background-repeat: no-repeat;
+    -webkit-transform: rotateY(-50deg) scale(0.5);
+            transform: rotateY(-50deg) scale(0.5);
+    opacity: 0;
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.71, 0.05, 0.09, 0.91);
+  }
+  .split.active div {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translateY(0);
+            transform: rotate(0deg) translateY(0);
+  }
 
 
 

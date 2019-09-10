@@ -22,7 +22,6 @@ function san_scripts() {
 <?php } ?>
 <!-- container section -->
 
-   
     
   
 
@@ -37,12 +36,17 @@ function san_scripts() {
 
             </div>
             <div class="section-right">
-              <a href="http://localhost/projects/marketcube/leadership/" class="abt-wavelink ext-link">Leadership</a>
+            
+              <a href="http://localhost/projects/marketcube/leadership/" class="abt-wavelink link1 ext-link"> <img  src="<?php bloginfo('template_directory'); ?>/images/team.png" /></a>
+              <a href="http://localhost/projects/marketcube/leadership/" class="abt-wavelink link2 ext-link"> <img  src="<?php bloginfo('template_directory'); ?>/images/core-value.png" /></a>
+              <a href="http://localhost/projects/marketcube/leadership/" class="abt-wavelink link3 ext-link"> <img  src="<?php bloginfo('template_directory'); ?>/images/leadrship.png" /></a>
             </div>
             <div class="sect-video">
-            <video src="<?php bloginfo('template_directory'); ?>/videos/v2.mp4" muted="" preload="auto" loop="" autoplay></video>
-
-
+            <!-- <video src="<?php bloginfo('template_directory'); ?>/videos/v2.mp4" muted="" preload="auto" loop="" autoplay></video> -->
+            <div class="split">
+                <img  src="<?php bloginfo('template_directory'); ?>/images/aboutbak.png" />
+              </div>
+           
           </div>
             <div class="sect-foot">
                 <div class="foot-left">

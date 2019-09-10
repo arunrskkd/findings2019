@@ -64,6 +64,7 @@
         TweenLite.set(_this.newContainer, { clearProps: 'all' });
         _this.done();
       }});
+      var split = new Split();
     },
 
     // updateLinks: function() {
@@ -106,4 +107,54 @@ Barba.Pjax.preventCheck = function(evt, element) {
 };
 
 
+var split = new Split();
+
 });
+
+
+var Split = function() {
+  this.$t = jQuery(".split");
+  this.gridX = 10;
+  this.gridY = 10;
+  this.w = this.$t.width();
+  this.h = this.$t.height();
+  this.img = jQuery("img", this.$t).attr("src");
+  this.delay = 0.13;
+
+  this.create = function() {
+    jQuery("div", this.$t).remove();
+
+      for (x = 0; x < this.gridX; x++) {
+      for (y = 0; y < this.gridY; y++) {
+          var width = this.w / this.gridX * 101 / this.w + "%",
+              height = this.h / this.gridY * 101 / this.h + "%",
+              top = this.h / this.gridY * y * 100 / this.h + "%",
+              left = this.w / this.gridX * x * 100 / this.w + "%",
+              bgPosX = -(this.w / this.gridX * x) + "px",
+              bgPosY = -(this.h / this.gridY * y) + "px";
+
+              jQuery("<div />")
+          .css({
+          top: top,
+          left: left,
+          width: width,
+          height: height,
+          backgroundImage: "url(" + this.img + ")",
+          backgroundPosition: bgPosX + " " + bgPosY,
+          backgroundSize: this.w + "px",
+          transitionDelay: x * this.delay + y * this.delay + "s"
+          })
+          .appendTo(this.$t);
+      }
+      }
+  };
+
+  this.create();
+  jQuery(".split").addClass("active");
+  setInterval(function(){ 
+    jQuery(".split").toggleClass("active");
+
+   }, 3000);
+  };
+
+ 
