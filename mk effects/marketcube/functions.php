@@ -120,10 +120,12 @@ function acodez_themes_scripts() {
 	wp_register_script('tweenmax', get_template_directory_uri() . '/js/tweenmax.js', array('jquery'), '', true);
 	wp_register_script('lazyload', get_template_directory_uri() . '/js/lazyload.js', array('jquery'), '', true);
 	wp_register_script('barba', get_template_directory_uri() . '/js/barba.js', array('jquery'), '', true);
-	wp_register_script('aboutpagejs', get_template_directory_uri() . '/js/aboutpage.js', array('jquery'), '', true);		
+	wp_register_script('aboutpagejs', get_template_directory_uri() . '/js/aboutpage.js', array('jquery'), '', true);
+	wp_register_script('magnificpop', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), '', true);				
 	
 	wp_enqueue_script('main');
 	wp_enqueue_script('transit');
+	wp_enqueue_script('magnificpop');
 	
 
 

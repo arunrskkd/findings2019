@@ -26,7 +26,7 @@ function san_scripts() {
   
 
   <main id="barba-wrapper">
-      <div class="barba-container" data-prev="http://localhost/projects/marketcube/about2" data-next="http://localhost/projects/marketcube/about2">
+      <div class="barba-container" >
       <div class="aboutpage-container">
           <section id="section-1" data-page="sectionone" class="section">
             <div class="section-left">
@@ -37,9 +37,9 @@ function san_scripts() {
             </div>
             <div class="section-right">
             
-              <a href="http://localhost/projects/marketcube/leadership/" class="abt-wavelink link1 ext-link"> <img  src="<?php bloginfo('template_directory'); ?>/images/team.png" /></a>
-              <a href="http://localhost/projects/marketcube/leadership/" class="abt-wavelink link2 ext-link"> <img  src="<?php bloginfo('template_directory'); ?>/images/core-value.png" /></a>
-              <a href="http://localhost/projects/marketcube/leadership/" class="abt-wavelink link3 ext-link"> <img  src="<?php bloginfo('template_directory'); ?>/images/leadrship.png" /></a>
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>leadership3/" class="abt-wavelink link1 "> <img  src="<?php bloginfo('template_directory'); ?>/images/team.png" /></a>
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>core-values/" class="abt-wavelink link2 "> <img  src="<?php bloginfo('template_directory'); ?>/images/core-value.png" /></a>
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>leadership/" class="abt-wavelink link3 "> <img  src="<?php bloginfo('template_directory'); ?>/images/leadrship.png" /></a>
             </div>
             <div class="sect-video">
             <!-- <video src="<?php bloginfo('template_directory'); ?>/videos/v2.mp4" muted="" preload="auto" loop="" autoplay></video> -->
@@ -54,20 +54,20 @@ function san_scripts() {
                     01
                   </div>
                   <div class="page-link">
-                     <a href="http://localhost/projects/marketcube/intelligence/">
+                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>intelligence/">
                      <h4>Intelligence</h4>
                       <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</h5>
                      </a>
                   </div>
                   <div class="page-link ">
-                  <a href="http://localhost/projects/marketcube/automation/">
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>automation/">
 
                   <h4>Automation </h4>
                       <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</h5>
                       </a>
                   </div>
                   <div class="page-link ">
-                  <a href="http://localhost/projects/marketcube/people/">
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>people/">
 
                   <h4>People</h4>
                       <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</h5>
@@ -76,7 +76,7 @@ function san_scripts() {
                 
                 </div>
                 <div class="foot-rit">
-                    <a href="http://localhost/projects/marketcube/intelligence/" class="nextpage">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>intelligence/" class="nextpage">
                     
                           <span class="icon-forward"></span>
                           <h6>See more </h6>
@@ -91,7 +91,7 @@ function san_scripts() {
                     01
                   </div>
                   <div class="page-link">
-                     <a href="http://localhost/projects/marketcube/intelligence/">
+                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>intelligence/">
                         <h4>Intelligence</h4>
                      </a>
                   </div>

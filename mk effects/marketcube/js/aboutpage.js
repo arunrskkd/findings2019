@@ -65,6 +65,7 @@
         _this.done();
       }});
       var split = new Split();
+      magnificpop();
     },
 
     // updateLinks: function() {
@@ -108,7 +109,7 @@ Barba.Pjax.preventCheck = function(evt, element) {
 
 
 var split = new Split();
-
+magnificpop();
 });
 
 
@@ -151,10 +152,26 @@ var Split = function() {
 
   this.create();
   jQuery(".split").addClass("active");
+  };
+
+  
   setInterval(function(){ 
     jQuery(".split").toggleClass("active");
 
    }, 3000);
-  };
-
  
+
+  function magnificpop(){
+    jQuery(function () {
+      jQuery('.popup-modal').magnificPopup({
+        type: 'inline',
+        preloader: false,
+        modal: true,
+            mainClass: 'mfp-fade'
+      });
+      jQuery(document).on('click', '.popup-modal-dismiss', function (e) {
+        e.preventDefault();
+        jQuery.magnificPopup.close();
+      });
+    });
+  }

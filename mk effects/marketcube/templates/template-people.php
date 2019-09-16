@@ -27,7 +27,7 @@ function san_scripts() {
   
 
   <main id="barba-wrapper">
-      <div class="barba-container" data-prev="http://localhost/projects/marketcube/about2" data-next="http://localhost/projects/marketcube/about2">
+      <div class="barba-container" >
       <div class="aboutpage-container">
           <section id="section-1" data-page="sectionone" class="section">
             <div class="section-left">
@@ -45,24 +45,24 @@ function san_scripts() {
             <div class="sect-foot">
                 <div class="foot-left">
                   <div class="number">
-                  <a href="http://localhost/projects/marketcube/about/">About</a>
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>about-page/">About</a>
                     03
                   </div>
                   <div class="page-link">
-                     <a href="http://localhost/projects/marketcube/intelligence/">
+                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>intelligence/">
                      <h4>Intelligence</h4>
                       <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</h5>
                      </a>
                   </div>
                   <div class="page-link ">
-                  <a href="http://localhost/projects/marketcube/automation/">
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>automation/">
 
                   <h4>Automation </h4>
                       <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</h5>
                       </a>
                   </div>
                   <div class="page-link active">
-                  <a href="http://localhost/projects/marketcube/people/">
+                  <a href="<?php echo esc_url( home_url( '/' ) ); ?>people/">
 
                   <h4>People</h4>
                       <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</h5>
@@ -71,7 +71,7 @@ function san_scripts() {
                 
                 </div>
                 <div class="foot-rit">
-                    <a href="http://localhost/projects/marketcube/about/" class="nextpage">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>about-page/" class="nextpage">
                     
                           <span class="icon-forward inverse"></span>
                           <h6>Back </h6>
@@ -86,7 +86,7 @@ function san_scripts() {
                     01
                   </div>
                   <div class="page-link">
-                     <a href="http://localhost/projects/marketcube/about/">
+                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>about-page/">
                         <h4>Intelligence</h4>
                      </a>
                   </div>

@@ -99,7 +99,7 @@
 							<a href=""><span class="count">04</span>Piplsay</a>
 						</li>
 						<li>
-							<a href=""><span class="count">05</span>About Us</a>
+							<a class="ext-link" href="<?php echo esc_url( home_url( '/' ) ); ?>about-page/"><span class="count">05</span>About Us</a>
 						</li>
 						<li>
 							<a href=""><span class="count">06</span>Events/News</a>
